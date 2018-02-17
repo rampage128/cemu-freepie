@@ -3,8 +3,8 @@
 > Configurable FreePIE script for cemu
 
 This is a python script for [FreePIE](http://andersmalmgren.github.io/FreePIE/) and 
-[Cemu](http://cemu.info/). It allows to emulate vJoy inputs using completely custom 
-configuration files per game.
+[Cemu](http://cemu.info/). It allows to emulate [vJoy](https://github.com/shauleiz/vJoy) 
+inputs using completely custom configuration files per game.
 
 Configuration files allow custom key-bindings and are automagically loaded depending on 
 which game is currently running in [Cemu](http://cemu.info/).
@@ -21,27 +21,27 @@ and allowing to do so on a different spot __per game__.
 
 ## Requirements
 
-- [FreePIE](http://andersmalmgren.github.io/FreePIE/)
-- [Cemu](http://cemu.info/)
-- [vJoy](https://github.com/shauleiz/vJoy)
+- [FreePIE](http://andersmalmgren.github.io/FreePIE/): To run the script.
+- [vJoy](https://github.com/shauleiz/vJoy): To emulate a controller.
+- [Cemu](http://cemu.info/): Duh!
 
 ## Installation
 ### Releases
 
-You can just download the cemu.py or clone this repository [From source](#from-source)
+You can just download the [cemu.py](https://github.com/rampage128/cemu-freepie/blob/master/cemu.py) or clone this repository [From source](#from-source)
 
 ### From source
 
-1. Get your favourite [Text editor](https://notepad-plus-plus.org/)
-2. Clone the repository wherever you like  
+1. Clone the repository wherever you like  
    ```
    git clone https://github.com/rampage128/cemu-freepie.git
    ```
+2. Get your [favourite Text editor](https://notepad-plus-plus.org/)
 3. __Profit!__
 
 ## Usage
 
-1. [Install](#Installation) the script
+1. [Install](#installation) the script
 2. Edit or create a configuration file with the title-id of your game (shown in the Cemu title).
 3. Open the [cemu.py](https://github.com/rampage128/cemu-freepie/blob/master/cemu.py) in [FreePIE](http://andersmalmgren.github.io/FreePIE/)
 4. Change the variable `config_dir` in [cemu.py](https://github.com/rampage128/cemu-freepie/blob/master/cemu.py) to the path your configuration files are located.
@@ -69,8 +69,8 @@ The `[settings]` section contains global settings:
 The `[controller]` section contains the key-bindings for the controller. The values get parsed
 as real python expressions. This means you can use actual script code in the entries!
 
-Available buttons are: `A`, `B`, `X`, `Y`, `L`, `R`, `ZL`, `ZR`, `+`, `-`, `LP`, `RP`, `DU`, `DD`, `DL`, `DR`
-Available axes are: `LX`, `LY`, `RX`, `RY`
+- Available buttons are: `A`, `B`, `X`, `Y`, `L`, `R`, `ZL`, `ZR`, `+`, `-`, `LP`, `RP`, `DU`, `DD`, `DL`, `DR`
+- Available axes are: `LX`, `LY`, `RX`, `RY`
 
 Buttons require a boolean or int value. Axes require a value between vJoys axis maximum and the inversion 
 of that value. In order to make this easier in the config file, there is several helper methods:
@@ -80,10 +80,15 @@ of that value. In order to make this easier in the config file, there is several
   divided by given sensitivity.
 
 Besides these helpers, all other FreePIE objects are available. Here is an example to bind `W` `A` `S` `D`
-to the left joystick:
+to the left and the mouse to the right joystick:
 ```
+[controller]
+...
 LX = keys2Axis(keyboard.getKeyDown(Key.D), keyboard.getKeyDown(Key.A))
-LY = keys2Axis(keyboard.getKeyDown(Key.W), keyboard.getKeyDown(Key.S))	
+LY = keys2Axis(keyboard.getKeyDown(Key.W), keyboard.getKeyDown(Key.S))
+RX = delta2Axis(mouse.deltaX, 10)
+RY = delta2Axis(-mouse.deltaY, 10)
+...
 ```
 
 For more information, please check out one of the [example configuration files](https://github.com/rampage128/cemu-freepie/).
@@ -106,6 +111,6 @@ Also, if you like this or other of my projects, please feel free to support me u
 
 ## Dependencies
 
-- [FreePIE](http://andersmalmgren.github.io/FreePIE/)
-- [Cemu](http://cemu.info/)
-- [vJoy](https://github.com/shauleiz/vJoy)
+- [FreePIE](http://andersmalmgren.github.io/FreePIE/): To run the script.
+- [vJoy](https://github.com/shauleiz/vJoy): To emulate a controller.
+- [Cemu](http://cemu.info/): Duh!
