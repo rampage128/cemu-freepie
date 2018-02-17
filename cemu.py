@@ -5,7 +5,7 @@ import ConfigParser
 
 if starting:
 	# CONFIGURATION
-	config_dir = 'E:\\rampage\\Documents\\Google Drive\\profiles\\freepie\\cemu\\'
+	config_dir = 'c:\\PATH_TO_CONFIG'
 	
 	# variables
 	bindings = {}
@@ -23,22 +23,22 @@ if toggle:
 
 # update vJoy
 if enabled:
-	vJoy[0].setButton(0, bindings['a']()) #A - Use/ok
-	vJoy[0].setButton(1, bindings['b']()) #B - Run/drop/cancel/Holster weapons
-	vJoy[0].setButton(2, bindings['x']()) #X - Jump
-	vJoy[0].setButton(3, bindings['y']()) #Y - Attack
-	vJoy[0].setButton(4, bindings['l']()) #L - Rune
-	vJoy[0].setButton(5, bindings['r']()) #R - Throw
-	vJoy[0].setButton(6, bindings['zl']()) #ZL - Lock/Block
-	vJoy[0].setButton(7, bindings['zr']()) #ZR - Aim bow
-	vJoy[0].setButton(8, bindings['+']()) #+ - Menu
-	vJoy[0].setButton(9, bindings['-']()) #- - Map
-	vJoy[0].setButton(10, bindings['lp']()) #press left joy - crouch
-	vJoy[0].setButton(11, bindings['rp']()) #press right joy - binocular
-	vJoy[0].setButton(12, bindings['du']()) #dpad-u - switch rune
-	vJoy[0].setButton(13, bindings['dd']()) #dpad-d - call horse
-	vJoy[0].setButton(14, bindings['dl']()) #dpad-l - switch shield
-	vJoy[0].setButton(15, bindings['dr']()) #dpad-r - switch weapon	
+	vJoy[0].setButton(0, bindings['a']())
+	vJoy[0].setButton(1, bindings['b']())
+	vJoy[0].setButton(2, bindings['x']())
+	vJoy[0].setButton(3, bindings['y']())
+	vJoy[0].setButton(4, bindings['l']())
+	vJoy[0].setButton(5, bindings['r']())
+	vJoy[0].setButton(6, bindings['zl']())
+	vJoy[0].setButton(7, bindings['zr']())
+	vJoy[0].setButton(8, bindings['+']())
+	vJoy[0].setButton(9, bindings['-']())
+	vJoy[0].setButton(10, bindings['lp']())
+	vJoy[0].setButton(11, bindings['rp']())
+	vJoy[0].setButton(12, bindings['du']())
+	vJoy[0].setButton(13, bindings['dd']())
+	vJoy[0].setButton(14, bindings['dl']())
+	vJoy[0].setButton(15, bindings['dr']())
 	vJoy[0].rx = bindings['lx']()
 	vJoy[0].ry = bindings['ly']()
 	vJoy[0].x = bindings['rx']()
